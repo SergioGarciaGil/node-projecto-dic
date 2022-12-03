@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const productosSchema = new Schema({
     nombre: {
+        unique: true,
         type: String,
         trim: true
     },

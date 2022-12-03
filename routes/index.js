@@ -9,7 +9,6 @@ const productosController = require('../controller/productosController')
 module.exports = function () {
 
     router.post('/clientes', clienteController.nuevoCliente)
-
     router.get('/clientes', clienteController.mostrarClientes)
     router.get('/clientes/:idCliente', clienteController.mostrarCliente)
     router.put('/clientes/:idCliente', clienteController.actualizarCliente)
@@ -17,7 +16,10 @@ module.exports = function () {
 
     //**PRODUCTOS**/
     router.post('/productos', productosController.nuevoProducto)
-
+    router.get('/productos', productosController.mostrarProductos)
+    router.get('/productos/:idProducto', productosController.mostrarProducto)
+    router.put('/productos/:idProducto', productosController.actualizarProducto)
+    router.delete('/productos/:idProducto', productosController.eliminarProducto)
 
     return router
 }
