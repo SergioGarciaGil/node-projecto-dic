@@ -29,8 +29,8 @@ exports.mostrarProducto = async (req, res, next) => {
 
     const producto = await Productos.findById(req.params.idProducto)
     if (!producto) {
-        res.json({ mensaje: `producto con id ${id} no existe` })
-        next()
+        res.json({ mensaje: `producto con id  no existe` })
+        return next()
     }
     res.json(producto)
 }

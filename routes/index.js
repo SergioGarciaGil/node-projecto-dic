@@ -24,8 +24,10 @@ module.exports = function () {
 
     //**PEDIDOS**//
     router.post('/pedidos', pedidosController.nuevoPedido)
-
-    //mostrar todos los pedidos que
     router.get('/pedidos', pedidosController.mostrarPedidos)
+    router.get('/pedidos/:idPedido', pedidosController.mostrarPedido)
+    router.put('/pedidos/:idPedido', pedidosController.actualizarPedido)
+    router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido)
+
     return router
 }
