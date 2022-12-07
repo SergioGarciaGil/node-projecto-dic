@@ -3,6 +3,7 @@ const router = express.Router();
 const clienteController = require('../controller/clienteController')
 const productosController = require('../controller/productosController')
 const pedidosController = require('../controller/pedidosController')
+const usuariosController = require('../controller/usuariosController')
 
 
 
@@ -29,5 +30,8 @@ module.exports = function () {
     router.put('/pedidos/:idPedido', pedidosController.actualizarPedido)
     router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido)
 
+    //USUARIOS
+    router.post('/crear-cuenta', usuariosController.registrarUsuario)
+    router.post('/iniciar-sesion', usuariosController.autenticarUusario)
     return router
 }
